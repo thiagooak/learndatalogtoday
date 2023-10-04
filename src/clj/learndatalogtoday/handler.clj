@@ -62,7 +62,7 @@
   (routes
    (GET "/"
      []
-     (toc))
+     (:html (read-chapter 0)))
 
    (GET ["/chapter/:n" :n #"[0-9]+"]
      [n]

@@ -1,27 +1,25 @@
-# Extensible Data Notation
+# Learn Datalog Today
 
-In Datomic, a Datalog query is written in
-[extensible data notation (edn)](http://edn-format.org). Edn is a data format similar to JSON, but it:
+An interactive tutorial that will teach you the [Datomic](https://datomic.com) dialect of [Datalog](https://en.wikipedia.org/wiki/Datalog).
+Datalog is a declarative database query language with roots in logic programming.
 
-* is extensible with user defined value types,
-* has more base types,
-* is a subset of [Clojure](http://clojure.org) data.
+## Table of Contents
 
-Edn consists of:
+- [Basic Queries](/chapter/1)
+- [Data Patterns](/chapter/2)
+- [Parameterized Queries](/chapter/3)
+- [More Queries](/chapter/4)
+- [Predicates](/chapter/5)
+- [Transformation Functions](/chapter/6)
+- [Aggregates](/chapter/7)
+- [Rules](/chapter/8)
 
-* Numbers: `42`, `3.14159`
-* Strings: `"This is a string"`
-* Keywords: `:kw`, `:namespaced/keyword`, `:foo.bar/baz`
-* Symbols: `max`, `+`, `?title`
-* Vectors: `[1 2 3]` `[:find ?foo ...]`
-* Lists: `(3.14 :foo [:bar :baz])`, `(+ 1 2 3 4)`
-* Instants: `#inst "2013-02-26"`
-* .. and a few other things which we will not need in this tutorial.
+In Datomic, a Datalog query is written in [EDN (Extensible Data Notation)](http://edn-format.org).
 
 Here is an example query that finds all movie titles in our example database:
 
     [:find ?title
-     :where 
+     :where
      [_ :movie/title ?title]]
 
 Note that the query is a vector with four elements:
@@ -31,6 +29,4 @@ Note that the query is a vector with four elements:
 * the keyword `:where`
 * the vector `[_ :movie/title ?title]`
 
-We'll go over the specific parts of the query later, but for now you 
-should simply type the above query verbatim into the textbox below,
-press **Run Query**, and then continue to the next part of the tutorial.
+Use the text box to your right to test Datalog queries against our movies database.
