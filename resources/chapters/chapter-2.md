@@ -1,7 +1,5 @@
 # Data patterns
 
-In the previous chapter, we looked at **data patterns**, i.e., vectors
-after the `:where` clause, such as `[?e :movie/title "Commando"]`. 
 There can be many data patterns in a `:where` clause:
 
     [:find ?title
@@ -9,13 +7,13 @@ There can be many data patterns in a `:where` clause:
      [?e :movie/year 1987]
      [?e :movie/title ?title]]
 
-The important thing to note here is that the pattern variable `?e` is
+Note that the pattern variable `?e` is
 used in both data patterns. When a pattern variable is used in
 multiple places, the query engine requires it to be bound to the same
-value in each place. Therefore, this query will only find movie titles
+value. Therefore, this query will only find movie titles
 for movies made in 1987.
 
-The order of the data patterns does not matter (aside from performance 
+The order of the data patterns does not matter (aside from performance
 considerations), so the previous query could just as well have been written this way:
 
     [:find ?title
@@ -34,12 +32,12 @@ entity ID of the movie with "Lethal Weapon" as the title:
 Using the same entity ID at `?m`, we can find the cast members with the data
 pattern:
 
-    [?m :movie/cast ?p] 
+    [?m :movie/cast ?p]
 
 In this pattern, `?p` will now be (the entity ID of) a person entity, so we can grab the
 actual name with:
 
-    [?p :person/name ?name] 
+    [?p :person/name ?name]
 
 The query will therefore be:
 

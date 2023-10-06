@@ -1,7 +1,7 @@
 # Learn Datalog Today
 
-An interactive tutorial that will teach you the [Datomic](https://datomic.com) dialect of [Datalog](https://en.wikipedia.org/wiki/Datalog).
-Datalog is a declarative database query language with roots in logic programming.
+An interactive tutorial that will teach you [Datomic's](https://datomic.com) dialect of [Datalog](https://en.wikipedia.org/wiki/Datalog) -
+a declarative database query language with roots in logic programming.
 
 ## Table of Contents
 

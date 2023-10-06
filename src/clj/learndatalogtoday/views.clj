@@ -19,7 +19,7 @@
 
 (defn row [& content]
   [:div.row
-   [:div.offset2.span8
+   [:div.offset2
     content]])
 
 (defn base [chapter text exercises ecount]
@@ -48,7 +48,7 @@
            [:a.pull-right {:href (str "/chapter/" (inc chapter))}
             [:button {:type "button" :class "rounded bg-indigo-50 px-2 py-1 text-sm font-semibold text-indigo-600 shadow-sm hover:bg-indigo-100"}
              "Next chapter"]])]]]
-      [:aside {:class "sticky top-8 hidden shrink-0 xl:block"}
+      [:aside {:class "sticky top-8 w-1/2 shrink-0 xl:block"}
        [:div.exercises {:style "margin-top: 14px"} exercises]]]
      [:div (footer)]]
 
@@ -72,13 +72,13 @@
                     :query (pretty-query-string (:value input))
                     :rule (with-out-str (fipp/pprint (:value input)))
                     :value (with-out-str (fipp/pprint (:value input))))]
-    [:div.span8
-     [:div.row
-      [:div.span8 [:p [:small [:strong label]
-                       (when (= :query (:type input))
-                         [:span.pull-right "[ " [:a {:href "#" :class (str "show-ans-" tab-n)} "I give up!"] " ]"])]]]]
-     [:div.row
-      [:div.span8 [:textarea {:class (str "input-" tab-n)} input-str]]]]))
+    [:div
+     [:div
+      [:div [:p [:small [:strong label]
+                 (when (= :query (:type input))
+                   [:span.pull-right "[ " [:a {:href "#" :class (str "show-ans-" tab-n)} "I give up!"] " ]"])]]]]
+     [:div
+      [:div [:textarea {:class (str "input-" tab-n)} input-str]]]]))
 
 (defn build-inputs [tab-n inputs]
   (map-indexed (partial build-input tab-n) inputs))
@@ -88,15 +88,15 @@
                :id (str "tab" tab-n)}
 
          (md/md-to-html-string (:question exercise))
-         [:div.row.inputs
+         [:div.inputs
           (build-inputs tab-n (:inputs exercise))]
-         [:div.row
-          [:div.span8
+         [:div
+          [:div
            [:button.btn.btn-block {:id (str "run-query-" tab-n)
                                    :data-tab tab-n}
             "Run Query"]]]
-         [:div.row
-          [:div.span8
+         [:div
+          [:div
            [:div.alerts]
            [:table.table.table-striped.resultset
             [:thead]
