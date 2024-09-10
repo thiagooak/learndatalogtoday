@@ -76,7 +76,7 @@
      [:div
       [:div [:p [:small [:strong label]
                  (when (= :query (:type input))
-                   [:span.pull-right "[ " [:a {:href "#" :class (str "show-ans-" tab-n)} "I give up!"] " ]"])]]]]
+                   [:span.pull-right [:a {:href "#" :class (str "show-ans-" tab-n)} "show solution"]])]]]]
      [:div
       [:div [:textarea {:class (str "input-" tab-n)} input-str]]]]))
 
@@ -92,8 +92,10 @@
           (build-inputs tab-n (:inputs exercise))]
          [:div
           [:div
-           [:button.btn.btn-block {:id (str "run-query-" tab-n)
-                                   :data-tab tab-n}
+           [:button {:id (str "run-query-" tab-n)
+                     :data-tab tab-n
+                     :type "button"
+                     :class "rounded bg-indigo-50 px-2 py-1 text-sm font-semibold text-indigo-600 shadow-sm hover:bg-indigo-100"}
             "Run Query"]]]
          [:div
           [:div
