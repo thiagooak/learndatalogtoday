@@ -1,9 +1,12 @@
 {:title "Welcome"
  :text-file "chapters/chapter-0.md"
- :exercises [{:question "Find all movies titles in the database." 
+ :exercises [{:question "The query below finds the name of every movie director in the database.
+                         Change it to find all movies titles in the database."
               :hints []
               :inputs [{:type :query
-                        :value [:find ...]
-                        :correct-value [:find ?title 
-                                        :where 
+                        :value [:find ?my-logic-variable
+                                :where
+                                [_ :movie/director ?my-logic-variable]]
+                        :correct-value [:find ?title
+                                        :where
                                         [_ :movie/title ?title]]}]}]}
