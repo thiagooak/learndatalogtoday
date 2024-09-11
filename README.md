@@ -1,12 +1,12 @@
-# [learndatalogtoday](https://www.learndatalogtoday.org)
+# Learn Datomic
 
-An interactive [Datalog tutorial](https://www.learndatalogtoday.org).
+An interactive [Datomic tutorial](https://datomic.learn-some.com/).
 
-## Prerequisites
-
-You will need [Leiningen](https://github.com/technomancy/leiningen) and java installed.
+A fork of https://github.com/jonase/learndatalogtoday.
 
 ## Run locally
+
+You will need [Leiningen](https://leiningen.org/) and Java installed.
 
     $ lein uberjar
     $ java -cp target/learndatalogtoday-standalone.jar clojure.main -m learndatalogtoday.handler

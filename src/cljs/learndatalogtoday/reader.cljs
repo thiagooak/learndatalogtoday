@@ -6,6 +6,7 @@
 ;   the terms of this license.
 ;   You must not remove this notice, or any other, from this software.
 
+;; @TODO I'm not sure we need this patched reader anymore
 ;; This is a patched version of the ClojureScript reader. It contains
 ;; bugfixes for CLJS-454, CLJS-564 and CLJS-565 as well as an
 ;; optimized StringPushbackReader.
@@ -478,11 +479,11 @@ nil if the end of stream has been reached")
 
 (defn ^:private check [low n high msg]
   (when-not (<= low n high)
-    (reader-error nil (str msg " Failed:  " low "<=" n "<=" high))) 
+    (reader-error nil (str msg " Failed:  " low "<=" n "<=" high)))
   n)
 
 (defn parse-and-validate-timestamp [s]
-  (let [[_ years months days hours minutes seconds fraction offset-sign offset-hours offset-minutes :as v] 
+  (let [[_ years months days hours minutes seconds fraction offset-sign offset-hours offset-minutes :as v]
         (re-matches timestamp-regex s)]
     (if-not v
       (reader-error nil (str "Unrecognized date/time syntax: " s))
