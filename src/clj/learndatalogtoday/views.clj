@@ -28,7 +28,7 @@
     (include-css "/third-party/bootstrap/css/bootstrap.css")
     (include-css "/third-party/codemirror-3.15/lib/codemirror.css")
     (include-css "/style.css")
-    [:title "Learn Datalog Today!"]]
+    [:title "Learn Datalog"]]
    [:body
     [:div {:class "flex min-h-full flex-col"}
      [:header {:class "shrink-0 border-b border-gray-200 bg-white"}
@@ -36,6 +36,17 @@
        [:a {:href "/"} [:img {:class "h-8 w-auto" :src "/logo.png" :alt "Learn Datalog Today"}]]
        [:div {:class "flex items-center gap-x-8"} [:a {:href "/"} "Learn Datalog Today"]]]]
      [:div {:class "mx-auto flex w-full max-w-7xl items-start gap-x-8 px-4 py-10 sm:px-6 lg:px-8"}
+      [:div
+       [:ul
+        [:li [:a {:href "/chapter/1" } "Basic Queries"]]
+        [:li [:a {:href "/chapter/2" } "Data Patterns"]]
+        [:li [:a {:href "/chapter/3" } "Parameterized Queries"]]
+        [:li [:a {:href "/chapter/4" } "More Queries"]]
+        [:li [:a {:href "/chapter/5" } "Predicates"]]
+        [:li [:a {:href "/chapter/6" } "Transformation Functions"]]
+        [:li [:a {:href "/chapter/7" } "Aggregates"]]
+        [:li [:a {:href "/chapter/8" } "Rules"]]
+      ]]
       [:main {:class "flex-1"}
        [:div.container
         [:div text]
@@ -48,7 +59,7 @@
            [:a.pull-right {:href (str "/chapter/" (inc chapter))}
             [:button {:type "button" :class "rounded bg-indigo-50 px-2 py-1 text-sm font-semibold text-indigo-600 shadow-sm hover:bg-indigo-100"}
              "Next chapter"]])]]]
-      [:aside {:class "sticky top-8 w-1/2 shrink-0 xl:block"}
+      [:aside {:class "sticky top-8 w-1/3 shrink-0 xl:block"}
        [:div.exercises {:style "margin-top: 14px"} exercises]]]
      [:div (footer)]]
 
